@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 6 – Controlling the motors with PWM
+# Worksheet 7 – Controlling the motors with PWM
 
 import RPi.GPIO as GPIO # Import the GPIO Library
 import time # Import the Time library
