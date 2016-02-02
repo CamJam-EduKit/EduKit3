@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 8 – Obstacle Avoidance
+# Worksheet 9 – Obstacle Avoidance
 
 import RPi.GPIO as GPIO # Import the GPIO Library
 import time # Import the Time library
