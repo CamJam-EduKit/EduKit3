@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 2 - Motor Test Code
+# Worksheet 3 - Motor Test Code
 
 import RPi.GPIO as GPIO # Import the GPIO Library
 import time # Import the Time library
