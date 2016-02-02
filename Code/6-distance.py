@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 5 – Measuring Distance
+# Worksheet 6 – Measuring Distance
 
 import RPi.GPIO as GPIO # Import the GPIO Library
 import time # Import the Time library
