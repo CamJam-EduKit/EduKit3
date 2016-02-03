@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 3 – Driving and Turning
+# Worksheet 4 – Driving and Turning
 
 import RPi.GPIO as GPIO # Import the GPIO Library
 import time # Import the Time library
