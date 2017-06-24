@@ -36,16 +36,28 @@ try:
         StartTime = time.time()
 
         # The start time is reset until the Echo pin is taken high (==1)
-        while GPIO.input(pinEcho)==0:
-            StartTime = time.time()
+#####
+# PT version to resetting StartTime until Echo pin is taken high
+#####
+#        while GPIO.input(pinEcho)==0:
+#            StartTime = time.time()
 
         # Stop when the Echo pin is no longer high - the end time
-        while GPIO.input(pinEcho)==1:
+#####    
+# PT version setting the StopTime when the Echo pin is taken high (==1)
+#####    
+        while GPIO.input(pinEcho)==0:
             StopTime = time.time()
+#        while GPIO.input(pinEcho)==1:
+#            StopTime = time.time()
             # If the sensor is too close to an object, the Pi cannot
             # see the echo quickly enough, so we have to detect that
             # problem and say what has happened.
-            if StopTime-StartTime >= 0.04:
+#####
+# PT version switching to StopTime - StartTime LESS than or equal to 0.04
+#####
+#            if StopTime-StartTime >= 0.04:
+            if StopTime-StartTime <= 0.04:
                 print("Hold on there!  You're too close for me to see.")
                 StopTime = StartTime
                 break
