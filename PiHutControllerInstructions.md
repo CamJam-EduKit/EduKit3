@@ -64,16 +64,16 @@ Depending on whether you’re running Raspbian (full) or Raspbian Lite, some of 
 
 ```
 sudo apt update
-sudo apt install python-pip
+sudo apt install python3-pip
 ```
 
 We’re going to be using [GPIO Zero](https://gpiozero.readthedocs.io) plus Tom Oinn (Approximate Engineering)’s `input` library to communicate between the
 controller and the motor controller. You can [read the documentation for `input` here](https://approxeng.github.io/approxeng.input/).
 
 ```
-sudo apt install python-gpiozero
-sudo apt install python-dev gcc
-sudo pip install approxeng.input
+sudo apt install python3-gpiozero
+sudo apt install python3-dev gcc
+sudo pip3 install approxeng.input
 ```
 
 This last command loads the library and enables the root (superuser) to run it, which we will need to auto-start the code later.
@@ -92,7 +92,7 @@ Turn on your Pi Hut controller by activating the switch on the underside.
 Type in the following to test out the connection between the controller and the Pi:
 
 ```
-python camjamedukit3.py
+python3 camjamedukit3.py
 ```
 
 You should see GPIO Zero being found followed by the controller being found.
@@ -111,7 +111,7 @@ sudo nano /etc/rc.local
 Before the exit 0 statement at the bottom, add the following:
 
 ```
-/usr/bin/python /home/pi/camjamedukit3.py &
+/usr/bin/python3 /home/pi/camjamedukit3.py &
 ```
 
 **Make sure to add the & at the end!**
