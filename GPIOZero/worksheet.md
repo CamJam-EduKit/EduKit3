@@ -32,7 +32,9 @@ These tasks will work much better if the robot is free to move so it would be be
 
 Alternatively you could connect a keyboard, mouse and monitor to the Raspberry Pi. Connect the Raspberry Pi to a power supply. This will however limit the ability of the robot to move around which will particularly affect the obstacle avoidance and line following tasks.
 
-## Test the motors
+## Program the robot
+
+### Test the motors
 
 1. Once you are connected to the Raspberry Pi via the VNC, you should see the usual Raspberry Pi desktop in a window on your computer.
 
@@ -75,7 +77,7 @@ Alternatively you could connect a keyboard, mouse and monitor to the Raspberry P
     
     You could use the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_boards.html#camjam-3-kit-robot) to help you find out how. 
 
-## Test the Line Sensor
+### Test the Line Sensor
 
 1. Open a new code window with `ctrl+n` or by going to 'File' then 'New'
 
@@ -101,11 +103,11 @@ Alternatively you could connect a keyboard, mouse and monitor to the Raspberry P
  
  1. Press F5 to run your code. Hold the robot over light and dark surfaces to see what happens. You can print out and use the [test line](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20-%20Test%20Line.pdf) to try this.
 
-## Follow a Line
+### Follow a Line
 
 The instructions for following a line are still under test so are listed separately [here](https://github.com/NBizzell/EduKit3/blob/master/GPIOZero/line%20follower%20test.md)
 
-## Test the Distance Sensor
+### Test the Distance Sensor
 
 1. Open a new code window with `ctrl+n` or by going to 'File' then 'New'
 
@@ -132,7 +134,7 @@ The instructions for following a line are still under test so are listed separat
 
 1. Press F5 and run your code. What do you see if you move your hand towards or away from the ultrasonic sensor?
 
-## Avoid an Obstacle
+### Avoid an Obstacle
 
 1. Open a new code window with `ctrl+n` or by going to 'File' then 'New'
 
@@ -173,7 +175,7 @@ The instructions for following a line are still under test so are listed separat
 
 The robot should detect obstacles, stop, turn away then start forwards again.
 
-## What next?
+### What next?
 
 1. Try Changing the distance at which the robots reacts to an obstacle 
 
