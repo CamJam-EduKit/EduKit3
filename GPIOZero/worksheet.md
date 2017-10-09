@@ -2,6 +2,8 @@
 
 In this resource you will make a robot that will detect a line or avoid an obstacle. 
 
+n.b. The full code for each of the task below can be found in the [code folder](https://github.com/NBizzell/EduKit3/tree/master/Code).
+
 ## Software
 
 This resource uses the python library GPIO Zero. This is installed by default in Raspbian Jessie, but you may need to install it manually if you are using an older operating system.
@@ -20,13 +22,13 @@ To control the robot remotely from another computer you will need to install the
 
 Build the robot using the [build instructions](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%202%20-%20Building%20a%20Robot.pdf).
 
-The robot will work best if you have purchased an additional battery pack so it can run without being attached to a plug
+The robot will work best if you have purchased an additional battery pack so it can run without being attached to a plug.
 
 ## Connect to the Robot
 
-Connect a keyboard, mouse and monitor to the Raspberry Pi. Connect the Raspberry Pi to a power supply 
+These tasks will work much better if the robot is free to move so it would be best to set up the Raspberry Pi to use VNC (option 1 in [these instructions](https://www.raspberrypi.org/learning/teachers-guide/remote/) and connect to the Raspberry Pi using the VNC Viewer [Windows instructions](https://www.raspberrypi.org/learning/teachers-guide/vnc-windows/)).
 
-Alternatively if you would like to control your robot remotely, set up the Raspberry Pi to use VNC and connect to the Raspberry Pi using the VNC Viewer.
+Alternatively you could connect a keyboard, mouse and monitor to the Raspberry Pi. Connect the Raspberry Pi to a power supply. This will however limit the ability of the robot to move around which will particularly affect the obstacle avoidance and line following tasks.
 
 ## Test the motors
 
@@ -171,3 +173,10 @@ The robot should detect obstacles, stop, turn away then start forwards again.
 
 ## What next?
 
+1. Try Changing the distance at which the robots reacts to an obstacle 
+
+1. Try changing the AvoidObstacle procedure to drive around an obstacle instead of turning away from it.
+
+1. Try to develop a more complex line following program that will move forwards when on the line and search for it when it loses the line.
+
+1. Try combining the line follower and obstacle avoidance programs to make a robot that will follow a line until it finds an obstacle the moves around it and tries to find the line again.
