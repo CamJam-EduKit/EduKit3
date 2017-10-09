@@ -130,6 +130,44 @@ The instructions for following a line are still under test so are listed separat
 
 ## Avoid an Obstacle
 
+1. Open a new code window with `ctrl+n` or by going to 'File' then 'New'
 
+1. Begin the code by importing the DistanceSensor and CamJamKitRobot class from the GPIO Zero library and the sleep function from the time library:
+    
+    ```python
+    from gpiozero import DistanceSensor, CamJamKitRobot 
+    from time import sleep
+    ```
+1. Beneath this define sensor as an instance of the DistanceSensor class using the GPIO pins 18 and 17 as attributes and define robot as an instance of the CamJamKitRobot Class (there is no need to define the pin for this):
+    
+    ```python
+    sensor = DistanceSensor(echo=18, trigger=17)
+    robot = CamJamKitRobot()
+    ```
+
+1. Below this define a procedure that will be called when the robot finds an obstacle:
+
+    ```python
+    def AvoidObstacle():
+        robot.left() #turn left
+        sleep(0.5)
+    ```
+1. Then finally a loop that will have the robot check for obstacles and either drive forward or react to the obstacle by calling the procedure defined above: 
+
+    ```python
+    while True:
+        robot.forward()#drive forward
+        sleep(0.1)
+        if sensor.distance < 0.3: #check if sensor distance is less than 0.3m
+            robot.stop() #stop the robot
+            AvoidObstacle() #call the AvoidObstacle function
+    ```
+    
+1. Save your code as avoid.py
+
+1. Make sure your robot is free to move around (or propped up with its wheels free to move) then Press F5 and run your code.
+
+The robot should detect obstacles, stop, turn away then start forwards again.
 
 ## What next?
+
