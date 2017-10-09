@@ -72,6 +72,8 @@ Alternatively if you would like to control your robot remotely, set up the Raspb
 
 ## Follow a Line
 
+## Test the Distance Sensor
+
 ## Avoid an Obstacle
 
 ## What next?
