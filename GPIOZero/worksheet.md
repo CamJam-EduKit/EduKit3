@@ -20,6 +20,8 @@ To control the robot remotely from another computer you will need to install the
 
 ## Build the robot
 
+![](https://github.com/NBizzell/EduKit3/blob/master/GPIOZero/images/Robot.JPG)
+
 Build the robot using the [build instructions](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%202%20-%20Building%20a%20Robot.pdf).
 
 The robot will work best if you have purchased an additional battery pack so it can run without being attached to a plug.
