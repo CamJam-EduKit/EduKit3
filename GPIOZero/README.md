@@ -1,23 +1,31 @@
 # EduKit3 GPIO Zero Instructions
 
-These instructions allow you to program your EduKit 3 Robot using GPIOZero. GPIO Zero is a Python library simplifying the use of the GPIO pins. You can find out more about GPIOZero in the [GPIOZero documentation](https://gpiozero.readthedocs.io/en/stable/).
+In this resource you will make a robot that will follow a line or avoid an obstacle. 
 
-Using the instructions below you can build a simple line following robot or a robot that will avoid obstacles.
+## Software
 
-## Step 0: Installing GPIOZero
+This resource uses
 
-if you are using Raspbian Jessie GPIOZero is installed by Default.
+To install the software you need, run the following command in the terminal:
 
-If you are using an older version of Raspbian you will need to install the library manually. The documentation has the [instructions for manual installation](https://gpiozero.readthedocs.io/en/stable/installing.html) 
+```bash
+sudo apt install python3-gpiozero
+```
 
-## Step 1: Build the robot
+To control the robot remotely from another computer you will need to install the [VNC viewer software](https://www.realvnc.com/download/viewer/) on that computer.
 
-## Step 2: Test the motors
+## Build the robot
 
-## Step 3: Test the Line Sensor
+Build the robot using the [build instructions](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20Worksheet%202%20-%20Building%20a%20Robot.pdf).
 
-## Step 4: Follow a Line
+The robot will work best if you have purchased an additional battery pack so it can run without being attached to a plug
 
-## Step 5: Avoid an Obstacle
+## Test the motors
 
-## Step 6: What next?
+## Test the Line Sensor
+
+## Follow a Line
+
+## Avoid an Obstacle
+
+## What next?
