@@ -2,7 +2,7 @@
 
 In this resource you will make a robot that will detect a line or avoid an obstacle. 
 
-The full code for each of the task below can be found in the [code folder](https://github.com/NBizzell/EduKit3/tree/master/Code).
+The full code for each of the task below can be found in the [code folder](https://github.com/NBizzell/EduKit3/tree/master/GPIOZero/Code).
 
 ## Software
 
