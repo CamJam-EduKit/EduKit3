@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 6 – Measuring Distance GPIO Zero
+# Measuring Distance GPIO Zero
 # by Neil Bizzell (@PiVangelist)
 
 from gpiozero import DistanceSensor # Import the Distance Sensor Class from the GPIOZero Library
