@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 3 - Motor Test Code GPIO Zero Version
+# Motor Test Code GPIO Zero Version
 # by Neil Bizzell (@PiVangelist)
 
 from gpiozero import CamJamKitRobot # Import the CAMJamKitRobot Class from the GPIO Zero library
