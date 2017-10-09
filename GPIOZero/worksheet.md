@@ -22,8 +22,18 @@ Build the robot using the [build instructions](https://github.com/CamJam-EduKit/
 
 The robot will work best if you have purchased an additional battery pack so it can run without being attached to a plug
 
+## Connect to the Robot
+
+Connect up a Keyboard, Mouse and Monitor to the Raspberry Pi.
+
+Alternatively if you would like to control your robot remotely, set up the Raspberry Pi to use VNC and connect to the Raspberry Pi using the VNC Viewer
+
 ## Test the motors
 
+'''python
+from gpiozero import CamJamKitRobot # Import DistanceSensor and CamJamKitRobot from the GPIOzero Library
+from time import sleep # Import sleep from the time library
+,,,
 
 
 ## Test the Line Sensor
