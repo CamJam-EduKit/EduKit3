@@ -1,5 +1,5 @@
 # CamJam EduKit 3 - Robotics
-# Obstacle Avoidance GPIO Zero version
+# Obstacle Avoidance GPIO Zero
 # by Neil Bizzell (@PiVangelist)
 
 from gpiozero import DistanceSensor, CamJamKitRobot # Import DistanceSensor and CamJamKitRobot Classes from the GPIOzero library
