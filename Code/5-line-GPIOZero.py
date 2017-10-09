@@ -1,5 +1,6 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 5 – Line Detection
+# Worksheet 5 – Line Detection GPIO Zero version
+# by Neil Bizzell (@PiVangelist)
 
 from gpiozero import LineSensor # Import LineSensor from the GPIOZero Library
 from signal import pause # import pause from the signal library
