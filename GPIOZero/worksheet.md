@@ -36,10 +36,10 @@ Alternatively if you would like to control your robot remotely, set up the Raspb
     
 1. Begin your code by importing the CamJamKitRobot class from GPIO Zero and the sleep function from the time library:
 
-```python
-from gpiozero import CamJamKitRobot
-from time import sleep 
-```
+    ```python
+    from gpiozero import CamJamKitRobot
+    from time import sleep 
+    ```
 
 1. Underneath that, add the following code to make your motors turn forwards for 2 seconds:
 
