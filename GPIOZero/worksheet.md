@@ -8,9 +8,9 @@ This resource uses the python library GPIO Zero. This is installed by default in
 
 To install this software, run the following command in the terminal:
 
-    ```bash
-    sudo apt install python3-gpiozero
-    ```
+```bash
+sudo apt install python3-gpiozero
+```
 
 For more support with the installation process or for instructions for using PIP use the [GPIO Zero installation instructions](http://gpiozero.readthedocs.io/en/stable/installing.html)
 
