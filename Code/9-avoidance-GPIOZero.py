@@ -1,10 +1,11 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 9 – Obstacle Avoidance
+# Worksheet 9 – Obstacle Avoidance GPIO Zero version
+# by Neil Bizzell (@PiVangelist)
 
-from gpiozero import DistanceSensor, CamJamKitRobot # Import DistanceSensor and CamJamKitRobot from the GPIOzero Library
-from time import sleep # Import sleep from the time library
+from gpiozero import DistanceSensor, CamJamKitRobot # Import DistanceSensor and CamJamKitRobot Classes from the GPIOzero library
+from time import sleep # Import sleep function from the time library
 
-# define the pins for the motor (fixed in the GPIO Zero Library)
+# define the pins for the motor (fixed in the GPIO Zero library)
 robot = CamJamKitRobot()
 
 # Define GPIO pins to use for the ultrasonic sensor
