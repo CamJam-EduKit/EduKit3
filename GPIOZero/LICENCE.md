@@ -1,12 +1,4 @@
-# EduKit3 Zero
-
-![](https://github.com/NBizzell/EduKit3/blob/master/GPIOZero/images/Robot.JPG)
-
-Make a simple robot using the CamJam EduKit3 and GPIO Zero
-
-[Worksheet](https://github.com/NBizzell/EduKit3/blob/master/GPIOZero/worksheet.md)
-
-## Licence
+# Licence
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
 
