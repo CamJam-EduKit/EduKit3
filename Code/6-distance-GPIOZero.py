@@ -8,8 +8,6 @@ from time import sleep # Import the sleep function from the time Library
 # Define GPIO pins to use on the Pi
 sensor = DistanceSensor(echo=18, trigger=17)
 
-print("Ultrasonic Measurement")
-
 # Repeat the next indented block forever
 while True:
     #print the distance in cm
