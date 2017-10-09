@@ -30,10 +30,10 @@ Alternatively if you would like to control your robot remotely, set up the Raspb
 
 ## Test the motors
 
-'''python
+```python
 from gpiozero import CamJamKitRobot # Import DistanceSensor and CamJamKitRobot from the GPIOzero Library
 from time import sleep # Import sleep from the time library
-,,,
+```
 
 
 ## Test the Line Sensor
