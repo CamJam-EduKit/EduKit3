@@ -71,7 +71,7 @@ Alternatively you could connect a keyboard, mouse and monitor to the Raspberry P
     - Move more slowly
     - Turn left and right?
     
-    You could use the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_boards.html#camjam-3-kit-robot) to help find out. 
+    You could use the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_boards.html#camjam-3-kit-robot) to help you find out how. 
 
 ## Test the Line Sensor
 
