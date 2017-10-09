@@ -4,13 +4,15 @@ In this resource you will make a robot that will follow a line or avoid an obsta
 
 ## Software
 
-This resource uses
+This resource uses the python library GPIoZero. This is installed by default in Raspbian Jessie, but you may need to install it manually if you are using an older operating system.
 
-To install the software you need, run the following command in the terminal:
+To install this software, run the following command in the terminal:
 
 ```bash
 sudo apt install python3-gpiozero
 ```
+
+For more support with the Installation process or for instructions for using PIP use the [GPIOZero installation instructions](http://gpiozero.readthedocs.io/en/stable/installing.html)
 
 To control the robot remotely from another computer you will need to install the [VNC viewer software](https://www.realvnc.com/download/viewer/) on that computer.
 
