@@ -1,0 +1,5 @@
+# Hardware Requirements
+
+In addition to a Raspbery Pi and SD card you will need one CamJam EduKit3 (Robot)
+
+If you are using an earlier model than the Raspberry Pi 3, you will need a USB WiFi dongle to be able to control your robot remotely.
