@@ -16,7 +16,7 @@ These instructions have not yet been tested fully using the robot so use at your
   from signal import pause
   ```
 
-1. Beneath this define sensor as an instance of the Linesensor class using the GPIO pin 25 as an attribute and define robot as an instance of the CamJamKitRobot Class (there is no need to define the pin for this): 
+1. Beneath this define sensor as an instance of the LineSensor class using the GPIO pin 25 as an attribute and define robot as an instance of the CamJamKitRobot Class (there is no need to define the pin for this): 
 
   ```python
   sensor = LineSensor(25)
