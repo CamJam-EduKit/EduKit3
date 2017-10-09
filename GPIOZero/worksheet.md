@@ -24,17 +24,42 @@ The robot will work best if you have purchased an additional battery pack so it 
 
 ## Connect to the Robot
 
-Connect up a Keyboard, Mouse and Monitor to the Raspberry Pi.
+Connect a keyboard, mouse and monitor to the Raspberry Pi. Connect the Raspberry Pi to a power supply 
 
-Alternatively if you would like to control your robot remotely, set up the Raspberry Pi to use VNC and connect to the Raspberry Pi using the VNC Viewer
+Alternatively if you would like to control your robot remotely, set up the Raspberry Pi to use VNC and connect to the Raspberry Pi using the VNC Viewer.
 
 ## Test the motors
 
+1. Once you are connected to the Raspberry Pi via the VNC, you should see the usual Raspberry Pi desktop in a window on your computer.
+
+1. Open up **Python 3** from the **Programming** menu:
+    
+1. Begin your code by importing the CamJamKitRobot class from GPIO Zero and the sleep function from the time library:
+
 ```python
-from gpiozero import CamJamKitRobot # Import DistanceSensor and CamJamKitRobot from the GPIOzero Library
-from time import sleep # Import sleep from the time library
+from gpiozero import CamJamKitRobot
+from time import sleep 
 ```
 
+1. Underneath that, add the following code to make your motors turn forwards for 2 seconds:
+
+    ```python
+    robot.forward(1)
+    sleep(2)
+    ```
+
+1. Make sure your robot is in a good place to be able to move (or if you are connected directly propped up so that the wheels can turn freely), then save your code and press F5 to run it. Your robot should move forwards for a short distance.
+
+1. Check that the robot moves forwards or that both motors turn forwards. If one or both of the motors turns in the wrong direction you will need to swap the red and black wires in the terminal block for that motor.
+
+1. Can you figure out how to make your robot do the following:
+
+    - Move backwards
+    - Move for a longer length of time
+    - Move more slowly
+    - Turn left and right?
+    
+    Help is available in the [GPIO Zero documentation](https://gpiozero.readthedocs.io/en/stable/api_boards.html#camjam-3-kit-robot) 
 
 ## Test the Line Sensor
 
