@@ -1,6 +1,6 @@
 # EduKit3 Zero 
 
-In this resource you will make a robot that will follow a line or avoid an obstacle. 
+In this resource you will make a robot that will detect a line or avoid an obstacle. 
 
 ## Software
 
@@ -56,7 +56,7 @@ Alternatively if you would like to control your robot remotely, set up the Raspb
     robot.forward(1)
     sleep(2)
     ```
-1. Save your code as 'motors.py'.
+1. Save your code as 'motortest.py'.
     
 1. Make sure your robot is in a good place to be able to move (or if you are connected directly propped up so that the wheels can turn freely), then press F5 to run your code. Your robot should move forwards for a short distance.
 
@@ -93,14 +93,43 @@ Alternatively if you would like to control your robot remotely, set up the Raspb
     sensor.when_no_line = lambda: print('The sensor is seeing a white surface')
     pause()
     ```
- 1. Save your code as 'line.py'.
+ 1. Save your code as 'linetest.py'.
  
- 1. Press F5 to run your code. Hold the robot over light and dark surfaces to see what happens.
+ 1. Press F5 to run your code. Hold the robot over light and dark surfaces to see what happens you can print out and use the [test line](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20-%20Test%20Line.pdf) to try this.
 
 ## Follow a Line
 
+The instructions for following a line are still under test so are listed separately [here](https://github.com/NBizzell/EduKit3/blob/master/GPIOZero/line%20follower%20test.md)
+
 ## Test the Distance Sensor
 
+1. Open a new code window with `ctrl+n` or by going to 'File' then 'New'
+
+1. Begin the code by importing the DistanceSensor class from the GPIO Zero library and the sleep function from the time library:
+    
+    ```python
+    from gpiozero import DistanceSensor 
+    from time import sleep
+    ```
+
+1. Below this define sensor as an instance of the DistanceSensor class and set up the pins used in the robot kit for the ultrasonic sensor
+
+    ```python
+    sensor = DistanceSensor(echo=18, trigger=17)
+    ```
+
+1. Underneath this define a loop that will check the distance and print it to the screen:
+    ```python
+    while True:
+        print('Distance: ', sensor.distance * 100, 'cm')
+        sleep(0.5)
+    ```
+1. Save your code as distancetest.py
+
+1. Press F5 and run your code. What do you see if you move your hand towards or away from the ultrasonic sensor?
+
 ## Avoid an Obstacle
+
+
 
 ## What next?
