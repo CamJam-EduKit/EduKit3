@@ -2,7 +2,7 @@
 
 In this resource you will make a robot that will detect a line or avoid an obstacle. 
 
-n.b. The full code for each of the task below can be found in the [code folder](https://github.com/NBizzell/EduKit3/tree/master/Code).
+The full code for each of the task below can be found in the [code folder](https://github.com/NBizzell/EduKit3/tree/master/Code).
 
 ## Software
 
@@ -26,7 +26,7 @@ The robot will work best if you have purchased an additional battery pack so it 
 
 ## Connect to the Robot
 
-These tasks will work much better if the robot is free to move so it would be best to set up the Raspberry Pi to use VNC (option 1 in [these instructions](https://www.raspberrypi.org/learning/teachers-guide/remote/) and connect to the Raspberry Pi using the VNC Viewer [Windows instructions](https://www.raspberrypi.org/learning/teachers-guide/vnc-windows/)).
+These tasks will work much better if the robot is free to move so it would be best to set up the Raspberry Pi to use VNC (option 1 in [these instructions](https://www.raspberrypi.org/learning/teachers-guide/remote/)) and connect to the Raspberry Pi using the VNC Viewer ([Windows instructions](https://www.raspberrypi.org/learning/teachers-guide/vnc-windows/)).
 
 Alternatively you could connect a keyboard, mouse and monitor to the Raspberry Pi. Connect the Raspberry Pi to a power supply. This will however limit the ability of the robot to move around which will particularly affect the obstacle avoidance and line following tasks.
 
@@ -60,11 +60,11 @@ Alternatively you could connect a keyboard, mouse and monitor to the Raspberry P
     ```
 1. Save your code as 'motortest.py'.
     
-1. Make sure your robot is in a good place to be able to move (or if you are connected directly propped up so that the wheels can turn freely), then press F5 to run your code. Your robot should move forwards for a short distance.
+1. Make sure your robot is in a good place to be able to move (or if you are connected directly propped up so that the wheels can turn freely), and then press F5 to run your code. Your robot should move forwards for a short distance.
 
 1. Check that the robot moves forwards or that both motors turn forwards. If one or both of the motors turns in the wrong direction you will need to swap the red and black wires in the terminal block for that motor.
 
-1. Can you figure out how to make your robot do the following:
+1. Can you figure out how to make your robot do the following?
 
     - Move backwards
     - Move for a longer length of time
@@ -97,7 +97,7 @@ Alternatively you could connect a keyboard, mouse and monitor to the Raspberry P
     ```
  1. Save your code as 'linetest.py'.
  
- 1. Press F5 to run your code. Hold the robot over light and dark surfaces to see what happens you can print out and use the [test line](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20-%20Test%20Line.pdf) to try this.
+ 1. Press F5 to run your code. Hold the robot over light and dark surfaces to see what happens. You can print out and use the [test line](https://github.com/CamJam-EduKit/EduKit3/blob/master/CamJam%20EduKit%203%20-%20Robotics%20-%20Test%20Line.pdf) to try this.
 
 ## Follow a Line
 
@@ -158,11 +158,11 @@ The instructions for following a line are still under test so are listed separat
 
     ```python
     while True:
-        robot.forward()#drive forward
+        robot.forward()
         sleep(0.1)
-        if sensor.distance < 0.3: #check if sensor distance is less than 0.3m
-            robot.stop() #stop the robot
-            AvoidObstacle() #call the AvoidObstacle function
+        if sensor.distance < 0.3: 
+            robot.stop() 
+            AvoidObstacle()
     ```
     
 1. Save your code as avoid.py
@@ -175,7 +175,7 @@ The robot should detect obstacles, stop, turn away then start forwards again.
 
 1. Try Changing the distance at which the robots reacts to an obstacle 
 
-1. Try changing the AvoidObstacle procedure to drive around an obstacle instead of turning away from it.
+1. Try changing the AvoidObstacle() procedure to drive around an obstacle instead of turning away from it.
 
 1. Try to develop a more complex line following program that will move forwards when on the line and search for it when it loses the line.
 
