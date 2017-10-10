@@ -10,7 +10,12 @@ sensor = LineSensor(25)
 #Define robot as instance of CamJamKit Robot Class
 robot = CamJamKitRobot()
 
-#set robot values when line detected 1 is motor on 0 is motor off
-sensor.when_line = lambda: robot.value = (1, 0)
-sensor.when_no_line = lambda: robot.value = (0, 1)
+def left():
+  robot.value(1,0)
+
+def right():
+    robot.value(0,1)
+
+sensor.when_line = left()
+sensor.when_no_line = right()
 pause()
