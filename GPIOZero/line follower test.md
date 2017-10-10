@@ -22,15 +22,23 @@ These instructions have not yet been tested fully using the robot so use at your
   sensor = LineSensor(25)
   robot = CamJamKitRobot()
   ```
-
-1. Underneath this use the code we tried before to detect the line but this time insted of printing we are going to set values for the motors to turn one wheel:
+1. Next define two procedures to tell the robot what to do when we move the left or right wheel forwards
 
   ```python
-  sensor.when_line = lambda: robot.value = (1, 0)
-  sensor.when_no_line = lambda: robot.value = (0, 1)
-  pause()
-  robot.value = (1, 1)
+  def left()
+    robot.value(1,0)
+    
+  def right()
+    robot.value(0,1)
   ```
+
+1. Finally we are going to use the code we tried before to detect the line but this time insted of printing we are going to call the procedures we defined above
+
+  ```python
+  sensor.when_line = left()
+  sensor.when_no_line = right()
+  pause()
+    ```
 1. Save your code as linefollower.py
 
 1. Place your robot onto the course and run the code by pressing F5 (this works best if you have connected over VNC using a battery and not very well at all if you are connected to a screen, keyboard, mouse and power supply).
