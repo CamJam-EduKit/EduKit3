@@ -38,7 +38,7 @@ These instructions have not yet been tested fully using the robot so use at your
   sensor.when_line = left()
   sensor.when_no_line = right()
   pause()
-    ```
+  ```
 1. Save your code as linefollower.py
 
 1. Place your robot onto the course and run the code by pressing F5 (this works best if you have connected over VNC using a battery and not very well at all if you are connected to a screen, keyboard, mouse and power supply).
