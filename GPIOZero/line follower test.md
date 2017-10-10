@@ -25,10 +25,10 @@ These instructions have not yet been tested fully using the robot so use at your
 1. Next define two procedures to tell the robot what to do when we move the left or right wheel forwards
 
   ```python
-  def left()
+  def left():
     robot.value(1,0)
     
-  def right()
+  def right():
     robot.value(0,1)
   ```
 
