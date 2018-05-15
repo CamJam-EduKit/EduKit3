@@ -9,17 +9,26 @@ pinLineFollower = 25
 
 sensor = LineSensor(pinLineFollower)
 
+
+# Define the functions that will be called when the line is
+# detected or not detected
+def lineseen():
+    print("Line seen")
+
+
+def linenotseen():
+    print("No line seen")
+
+
+# Tell the program what to do with a line is seen
+sensor.when_line = lineseen
+# And when no line is seen
+sensor.when_no_line = linenotseen
+
 try:
     # Repeat the next indented block forever
     while True:
-        # If the sensor is Low (=0), it's above the black line
-        if sensor.when_line:
-            print('The sensor is seeing a black surface')
-        # If not (else), print the following
-        else:
-            print('The sensor is seeing a white surface')
-        # Wait, then do the same again
-        time.sleep(0.2)
+        time.sleep(10)
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

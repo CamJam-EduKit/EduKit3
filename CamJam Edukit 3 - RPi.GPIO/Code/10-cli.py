@@ -1,9 +1,9 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 9 – Driving the Robot from the command line
+# Worksheet 9 - Driving the Robot from the command line
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
-import curses # Keyboard and screen painting library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import curses  # Keyboard and screen painting library
+import time  # Import the Time library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)
@@ -20,7 +20,7 @@ Frequency = 20
 # How long the pin stays on each cycle, as a percent
 DutyCycleA = 30
 DutyCycleB = 30
-# Settng the duty cycle to 0 means the motors will not turn
+# Setting the duty cycle to 0 means the motors will not turn
 Stop = 0
 
 # Set the GPIO Pin mode to be Output
@@ -41,40 +41,46 @@ pwmMotorABackwards.start(Stop)
 pwmMotorBForwards.start(Stop)
 pwmMotorBBackwards.start(Stop)
 
+
 # Turn all motors off
-def StopMotors():
+def stopmotors():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors forwards
-def Forwards():
+def forwards():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors backwards
-def Backwards():
+def backwards():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 
+
 # Turn left
-def Left():
+def left():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
 
+
 # Turn Right
-def Right():
+def right():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
+
 
 try:
     # set-up screen to accept keyboard input
@@ -87,37 +93,37 @@ try:
 
         # Up control
         if key == 65:
-            Forwards()
+            forwards()
             time.sleep(0.1)
 
         # Left control
         elif key == 68:
-            Left()
+            left()
             time.sleep(0.1)
 
         # Down control
         elif key == 66:
-            Backwards()
+            backwards()
             time.sleep(0.1)
 
         # Right control
         elif key == 67:
-            Right()
+            right()
             time.sleep(0.1)
 
         if key == 24:
-            StopMotors()
+            stopmotors()
             GPIO.cleanup()
             curses.endwin()
             exit(0)
 
-        StopMotors()
+        stopmotors()
         time.sleep(0.01)
 
 except KeyboardInterrupt:
     pass
 
 curses.endwin()
-StopMotors()
+stopmotors()
 
 GPIO.cleanup()

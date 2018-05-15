@@ -1,8 +1,8 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 7 – Controlling the motors with PWM
+# Worksheet 7 - Controlling the motors with PWM
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import time  # Import the Time library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)
@@ -18,7 +18,7 @@ pinMotorBBackwards = 7
 Frequency = 20
 # How long the pin stays on each cycle, as a percent (here, it's 30%)
 DutyCycle = 30
-# Settng the duty cycle to 0 means the motors will not turn
+# Setting the duty cycle to 0 means the motors will not turn
 Stop = 0
 
 # Set the GPIO Pin mode to be Output
@@ -39,57 +39,63 @@ pwmMotorABackwards.start(Stop)
 pwmMotorBForwards.start(Stop)
 pwmMotorBBackwards.start(Stop)
 
+
 # Turn all motors off
-def StopMotors():
+def stopmotors():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors forwards
-def Forwards():
+def forwards():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors backwards
-def Backwards():
+def backwards():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycle)
 
+
 # Turn left
-def Left():
+def left():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
 
+
 # Turn Right
-def Right():
+def right():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycle)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycle)
 
+
 # Your code to control the robot goes below this line
-Forwards()
-time.sleep(1) # Pause for 1 second
+forwards()
+time.sleep(1)  # Pause for 1 second
 
-Left()
-time.sleep(0.5) # Pause for half a second
+left()
+time.sleep(0.5)  # Pause for half a second
 
-Forwards()
+forwards()
 time.sleep(1)
 
-Right()
+right()
 time.sleep(0.5)
 
-Backwards()
+backwards()
 time.sleep(0.5)
 
-StopMotors()
+stopmotors()
 
 GPIO.cleanup()

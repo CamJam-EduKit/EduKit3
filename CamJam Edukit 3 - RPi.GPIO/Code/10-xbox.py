@@ -1,9 +1,8 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 9 – Driving the Robot with an XBox controller
+# Worksheet 9 - Driving the Robot with an XBox controller
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
-import XboxController # The XBox controller library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import XboxController  # The XBox controller library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)
@@ -20,7 +19,7 @@ Frequency = 20
 # How long the pin stays on each cycle, as a percent
 DutyCycleA = 30
 DutyCycleB = 30
-# Settng the duty cycle to 0 means the motors will not turn
+# Setting the duty cycle to 0 means the motors will not turn
 Stop = 0
 
 # Set the GPIO Pin mode to be Output
@@ -41,67 +40,74 @@ pwmMotorABackwards.start(Stop)
 pwmMotorBForwards.start(Stop)
 pwmMotorBBackwards.start(Stop)
 
+
 # Turn all motors off
-def StopMotors():
+def stopmotors():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors forwards
-def Forwards():
+def forwards():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors backwards
-def Backwards():
+def backwards():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 
+
 # Turn left
-def Left():
+def left():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
 
+
 # Turn Right
-def Right():
+def right():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 
-def Controller(controlId, value):
-    #print ("Control id = {}, Value = {}".format(controlId, value))
+
+def controller(controlid, value):
+    # print ("Control id = {}, Value = {}".format(controlId, value))
 
     # Left stick forward and back
-    if controlId == 1:
+    if controlid == 1:
         if value > 0:
-            Forwards()
+            forwards()
         elif value < 0:
-            Backwards()
+            backwards()
         elif value == 0:
-            StopMotors()
+            stopmotors()
 
     # Left stick left and right
-    elif controlId == 0:
+    elif controlid == 0:
         if value > 0:
-            Left()
+            left()
         elif value < 0:
-            Right()
+            right()
         elif value == 0:
-            StopMotors()
+            stopmotors()
+
 
 try:
     xBoxCont = XboxController.XboxController(
-        controllerCallBack = Controller,
-        deadzone = 0.3,
-        invertYAxis = True
+        controllerCallBack=controller,
+        deadzone=0.3,
+        invertYAxis=True
     )
     xBoxCont.start()
 
@@ -115,6 +121,6 @@ except KeyboardInterrupt:
     pass
 
 xBoxCont.stop()
-StopMotors()
+stopmotors()
 
 GPIO.cleanup()

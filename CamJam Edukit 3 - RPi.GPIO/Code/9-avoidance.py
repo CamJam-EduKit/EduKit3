@@ -1,8 +1,8 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 9 – Obstacle Avoidance
+# Worksheet 9 - Obstacle Avoidance
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import time  # Import the Time library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)
@@ -22,7 +22,7 @@ Frequency = 20
 # How long the pin stays on each cycle, as a percent
 DutyCycleA = 30
 DutyCycleB = 30
-# Settng the duty cycle to 0 means the motors will not turn
+# Setting the duty cycle to 0 means the motors will not turn
 Stop = 0
 
 # Set the GPIO Pin mode to be Output
@@ -32,12 +32,12 @@ GPIO.setup(pinMotorBForwards, GPIO.OUT)
 GPIO.setup(pinMotorBBackwards, GPIO.OUT)
 # Set pins as output and input
 GPIO.setup(pinTrigger, GPIO.OUT)  # Trigger
-GPIO.setup(pinEcho, GPIO.IN)      # Echo
+GPIO.setup(pinEcho, GPIO.IN)  # Echo
 
 # Distance Variables
-HowNear = 15.0
-ReverseTime = 0.5
-TurnTime = 0.75
+hownear = 15.0
+reversetime = 0.5
+turntime = 0.75
 
 # Set the GPIO to software PWM at 'Frequency' Hertz
 pwmMotorAForwards = GPIO.PWM(pinMotorAForwards, Frequency)
@@ -51,91 +51,100 @@ pwmMotorABackwards.start(Stop)
 pwmMotorBForwards.start(Stop)
 pwmMotorBBackwards.start(Stop)
 
+
 # Turn all motors off
-def StopMotors():
+def stopmotors():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors forwards
-def Forwards():
+def forwards():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
+
 
 # Turn both motors backwards
-def Backwards():
+def backwards():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 
+
 # Turn left
-def Left():
+def left():
     pwmMotorAForwards.ChangeDutyCycle(Stop)
     pwmMotorABackwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorBForwards.ChangeDutyCycle(DutyCycleB)
     pwmMotorBBackwards.ChangeDutyCycle(Stop)
 
+
 # Turn Right
-def Right():
+def right():
     pwmMotorAForwards.ChangeDutyCycle(DutyCycleA)
     pwmMotorABackwards.ChangeDutyCycle(Stop)
     pwmMotorBForwards.ChangeDutyCycle(Stop)
     pwmMotorBBackwards.ChangeDutyCycle(DutyCycleB)
 
+
 # Take a distance measurement
-def Measure():
+def measure():
     GPIO.output(pinTrigger, True)
     time.sleep(0.00001)
     GPIO.output(pinTrigger, False)
-    StartTime = time.time()
-    StopTime = StartTime
+    starttime = time.time()
+    stoptime = starttime
 
-    while GPIO.input(pinEcho)==0:
-        StartTime = time.time()
-        StopTime = StartTime
+    while GPIO.input(pinEcho) == 0:
+        starttime = time.time()
+        stoptime = starttime
 
-    while GPIO.input(pinEcho)==1:
-        StopTime = time.time()
+    while GPIO.input(pinEcho) == 1:
+        stoptime = time.time()
         # If the sensor is too close to an object, the Pi cannot
         # see the echo quickly enough, so we have to detect that
         # problem and say what has happened.
-        if StopTime-StartTime >= 0.04:
+        if stoptime - starttime >= 0.04:
             print("Hold on there!  You're too close for me to see.")
-            StopTime = StartTime
+            stoptime = starttime
             break
 
-    ElapsedTime = StopTime - StartTime
-    Distance = (ElapsedTime * 34300)/2
+    elapsedtime = stoptime - starttime
+    distance = (elapsedtime * 34300) / 2
 
-    return Distance
+    return distance
+
 
 # Return True if the ultrasonic sensor sees an obstacle
-def IsNearObstacle(localHowNear):
-    Distance = Measure()
+def isnearobstacle(localhownear):
+    distance = measure()
 
-    print("IsNearObstacle: "+str(Distance))
-    if Distance < localHowNear:
+    print("IsNearObstacle: " + str(distance))
+    if distance < localhownear:
         return True
     else:
         return False
 
+
 # Move back a little, then turn right
-def AvoidObstacle():
+def avoidobstacle():
     # Back off a little
     print("Backwards")
-    Backwards()
-    time.sleep(ReverseTime)
-    StopMotors()
+    backwards()
+    time.sleep(reversetime)
+    stopmotors()
 
     # Turn right
     print("Right")
-    Right()
-    time.sleep(TurnTime)
-    StopMotors()
+    right()
+    time.sleep(turntime)
+    stopmotors()
+
 
 # Your code to control the robot goes below this line
 try:
@@ -145,13 +154,13 @@ try:
     # Allow module to settle
     time.sleep(0.1)
 
-    #repeat the next indented block forever
+    # repeat the next indented block forever
     while True:
-        Forwards()
+        forwards()
         time.sleep(0.1)
-        if IsNearObstacle(HowNear):
-            StopMotors()
-            AvoidObstacle()
+        if isnearobstacle(HowNear):
+            stopmotors()
+            avoidobstacle()
 
 # If you press CTRL+C, cleanup and stop
 except KeyboardInterrupt:

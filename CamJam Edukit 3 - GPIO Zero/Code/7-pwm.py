@@ -7,13 +7,12 @@ from gpiozero import CamJamKitRobot  # Import the GPIO Zero Library CamJam libra
 robot = CamJamKitRobot()
 
 # Set the relative speeds of the two motors, between 0.0 and 1.0
-leftmotor = 0.5
-rightmotor = 0.4
+motorspeed = 0.5
 
-motorforward = (leftmotor, rightmotor)
-motorbackward = (-leftmotor, -rightmotor)
-motorleft = (leftmotor, 0)
-motorright = (0, rightmotor)
+motorforward = (motorspeed, motorspeed)
+motorbackward = (-motorspeed, -motorspeed)
+motorleft = (motorspeed, 0)
+motorright = (0, motorspeed)
 
 robot.value = motorforward
 time.sleep(1)

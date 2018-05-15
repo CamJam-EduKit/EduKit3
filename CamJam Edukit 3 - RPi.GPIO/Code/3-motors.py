@@ -1,8 +1,8 @@
 # CamJam EduKit 3 - Robotics
 # Worksheet 3 - Motor Test Code
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import time  # Import the Time library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)

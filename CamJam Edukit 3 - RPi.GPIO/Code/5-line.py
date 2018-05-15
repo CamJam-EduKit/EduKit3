@@ -1,8 +1,8 @@
 # CamJam EduKit 3 - Robotics
-# Worksheet 5 – Line Detection
+# Worksheet 5 - Line Detection
 
-import RPi.GPIO as GPIO # Import the GPIO Library
-import time # Import the Time library
+import RPi.GPIO as GPIO  # Import the GPIO Library
+import time  # Import the Time library
 
 # Set the GPIO modes
 GPIO.setmode(GPIO.BCM)
@@ -15,10 +15,10 @@ pinLineFollower = 25
 GPIO.setup(pinLineFollower, GPIO.IN)
 
 try:
-    #repeat the next indented block forever
+    # Repeat the next indented block forever
     while True:
-        # If the sensor is Low (=0), it’s above the black line
-        if GPIO.input(pinLineFollower)==0:
+        # If the sensor is Low (=0), it's above the black line
+        if GPIO.input(pinLineFollower) == 0:
             print('The sensor is seeing a black surface')
         # If not (else), print the following
         else:
