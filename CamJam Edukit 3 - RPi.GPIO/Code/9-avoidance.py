@@ -158,7 +158,7 @@ try:
     while True:
         forwards()
         time.sleep(0.1)
-        if isnearobstacle(HowNear):
+        if isnearobstacle(hownear):
             stopmotors()
             avoidobstacle()
 
