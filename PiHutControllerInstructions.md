@@ -99,6 +99,8 @@ You should see GPIO Zero being found followed by the controller being found.
 Press a few buttons on the controller to see the commands come through.
 Press the ‘Analog’ button to exit the script. (The script actually says use the HOME button, but the Analog button is that button!)
 
+To control the motors on your robot, just use the left-hand analog stick. You might consider changing the script eventually to do some kind of dual stick movement, but until then, just use the left stick.
+
 ## Run on boot
 Now, we need to make the script start up when the Pi is turned on.
 
