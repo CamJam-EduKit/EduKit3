@@ -19,11 +19,11 @@ and it should all 'just work'.
 First of all, take your CamJam EduKit 3 and build your robot.
 
 ## Operating System
-Write an SD card with the new Raspbian Stretch image from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/raspbian/)
+If you have not already done so, write an SD card with the newest Raspbian image from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/raspbian/). I recommend the "with desktop" version.
 I recommend [Etcher](https://etcher.io/) as the method for writing the image as it doesn't require you to
 unzip the image file before you write it to the SD card.
 
-## Set-up the operating system
+## Set-up the operating system for remote access wifi
 Once you've written the SD card, put it back in the machine you used to write it.
 If you're on Windows ignore anything about needing to format the SD card.
 
@@ -48,7 +48,7 @@ Replace `MY_SSID` with your wifi router's SSID and `MY_PASSWORD` with your wifi 
 This will connect your Pi up to your network and allow you to install the extra software you need.
 
 ## Check the network
-Insert your SD card into your Raspberry Pi 3 and connect up a keyboard and monitor.
+Insert your SD card into your Raspberry Pi and connect up a keyboard and monitor.
 
 Plug in the Pi and boot it up.
 
