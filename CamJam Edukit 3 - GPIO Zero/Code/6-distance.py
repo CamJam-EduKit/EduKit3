@@ -15,7 +15,7 @@ print("Ultrasonic Measurement")
 try:
     # Repeat the next indented block forever
     while True:
-        print("Distance: %.1f cm" % sensor.distance * 100)
+        print("Distance: %.1f cm" % (sensor.distance * 100))
         time.sleep(0.5)
 
 # If you press CTRL+C, cleanup and stop
