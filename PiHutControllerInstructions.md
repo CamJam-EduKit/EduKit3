@@ -114,6 +114,28 @@ Before the exit 0 statement at the bottom, add the following:
 /usr/bin/python3 /home/pi/camjamedukit3.py &
 ```
 
+## Run on boot, take 2!
+If the rc.local method fails (and only if it fails),
+
+First of all, edit the rc.local file and remove the line you added.
+
+Then, open up a Terminal and type the following:
+```
+crontab -e
+```
+
+Choose the Nano editor if it asks you (it should, if it's the first time you've done it).
+Now, to the bottom of the file, add the following:
+
+```
+@reboot python3 /home/pi/camjamedukit3.py &
+```
+
+**IMPORTANT: Make sure you put that & at the end otherwise your Pi won't continue to boot!**
+
+Save the file and exit.
+Reboot and it **should** run the script.
+
 **Make sure to add the & at the end!**
 
 Save the file and then shutdown your Pi:
