@@ -2,7 +2,7 @@
 # Worksheet 7 - Controlling the motors with PWM
 
 import time  # Import the Time library
-from gpiozero import CamJamKitRobot  # Import the GPIO Zero Library CamJam library
+from gpiozero import CamJamKitRobot  # Import the CamJam GPIO Zero Library
 
 robot = CamJamKitRobot()
 

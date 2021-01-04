@@ -2,7 +2,7 @@
 # Worksheet 9 - Obstacle Avoidance
 
 import time  # Import the Time library
-from gpiozero import CamJamKitRobot, DistanceSensor  # Import the GPIO Zero Libraries
+from gpiozero import CamJamKitRobot, DistanceSensor  # Import GPIO Zero Libraries
 
 # Define GPIO pins to use for the distance sensor
 pintrigger = 17

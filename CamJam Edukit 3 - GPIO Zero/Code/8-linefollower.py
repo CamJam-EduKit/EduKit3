@@ -2,7 +2,7 @@
 # Worksheet 8 - Line Following Robot
 
 import time  # Import the Time library
-from gpiozero import CamJamKitRobot, LineSensor  # Import the GPIO Zero Library
+from gpiozero import CamJamKitRobot, LineSensor  # Import GPIO Zero Library
 
 # Set variables for the line detector GPIO pin
 pinLineFollower = 25
