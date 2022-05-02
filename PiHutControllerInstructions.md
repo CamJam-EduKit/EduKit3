@@ -9,12 +9,6 @@ CamJam EduKit 3 is [available from The Pi Hut (assuming they have stock!)](https
 ## Get the controller
 The controller is [available from The Pi Hut and costs £14](https://thepihut.com/collections/raspberry-pi-store/products/raspberry-pi-compatible-wireless-gamepad-controller), making it comparable with other low-cost controllers.
 
-## Assumptions
-I'm going to assume you're using a full-size Raspberry Pi. If you've got a Raspberry Pi Zero and want to use that for the
-robot instead, I recommend doing all your initial software installation and setting-up on the full-sized Pi first
-as the additional, normal USB ports make things a heck of a lot easier! You can then swap the SD card into your Pi Zero
-and it should all 'just work'.
-
 ## Build
 First of all, take your CamJam EduKit 3 and build your robot.
 
